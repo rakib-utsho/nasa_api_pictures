@@ -6,8 +6,8 @@ const loader = document.querySelector('.loader');
 
 
 // NASA API
-const count = 10;
-const apiKey = 'DEMO_KEY';
+const count = 5;
+const apiKey = '4leTyMsnqUgyS4XBRjauiKP2DSbaOs1TcfpX1NFn';
 const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${count}`;
 
 
@@ -26,7 +26,7 @@ function updateDOM(){
         // Image
         const image = document.createElement('img');
         image.src = result.url;
-        image.alt 'NASA Picture of the Day';
+        image.alt = 'NASA Picture of the Day';
         image.loading = 'lazy';
         image.classList.add('card-img-top');
         // card Body
@@ -39,7 +39,7 @@ function updateDOM(){
         // Save text
         const saveText = document.createElement('p');
         saveText.classList.add('clickable');
-        saveText.textContent = 'Add to Favorite &#11088;'
+        saveText.textContent = 'Add to Favorite ⭐';
         // card text
         const cardText = document.createElement('p');
         cardText.textContent = result.explanation;
@@ -47,8 +47,18 @@ function updateDOM(){
         const footer =document.createElement('small');
         footer.classList.add('text-muted');
         //Date
-        const date
-    });
+        const date = document.createElement('strong');
+        date.textContent = result.date;
+        // Copyright
+        const copyright = document.createElement('span');
+        copyright.textContent = ` ©${result.copyright}`;
+        // Append
+        footer.append(date, copyright);
+        cardBody.append(cardTitle, saveText, cardText, footer);
+        link.appendChild(image);
+        card.append(link, cardBody);
+        imagesContainer.appendChild(card);
+    }); 
 };
 
 //Get 10 Images from NASA API
