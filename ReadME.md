@@ -14,9 +14,9 @@ A web application that fetches and displays stunning pictures from NASA's Astron
 
 ---
 
-## Screenshots
+## Live Demo
 
-Add screenshots of your project here (e.g., the main page, favorite section).
+Deploy Link: https://nasa-apod-info.netlify.app/
 
 ---
 
